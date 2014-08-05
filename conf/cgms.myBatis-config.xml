@@ -5,7 +5,9 @@
 <configuration>
 	<!-- 别名 需要整合到COMMON的myBatis-config.xml中-->
 	<typeAliases>
-		
+		<!-- cgms_﻿lovelive -->
+		<typeAlias alias="LoveLiveEvt" type="com.moemao.tgks.cgms.lovelive.entity.LoveLiveEvt" />
+		<typeAlias alias="LoveLiveReq" type="com.moemao.tgks.cgms.lovelive.entity.LoveLiveReq" />
 		
 	</typeAliases>
 </configuration>

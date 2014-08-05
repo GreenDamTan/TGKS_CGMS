@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+  "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moemao.tgks.cgms.lovelive.dao.LoveLiveDao">
+<select id="cgms_queryLoveLive" parameterType="LoveLiveReq" resultType="LoveLiveEvt" resultMap="LoveLiveEvtMap">
+        <![CDATA[  
+            SELECT t.id, t.cardid, t.character, t.rarity, t.type, t.imageurl, t.imageturl, t.maxlevel, t.minhp, t.minsmile, t.minpure, t.mincool, t.maxhp, t.maxsmile, t.maxpure, t.maxcool, t.appeal, t.appealinfo, t.centerskill, t.centerskillinfo, t.createtime, t.remark FROM t_tgks_cgms_lovelive t
+        ]]>
+        <where>
+                1=1
+            <if test="id !=null and id !='' ">
+                AND t.ID = #{id}
+            </if>
+            <if test="cardId !=null and cardId !='' ">
+                AND t.CARDID = #{cardId}
+            </if>
+            <if test="character !=null and character !='' ">
+                AND t.CHARACTER = #{character}
+            </if>
+            <if test="rarity !=null and rarity !='' ">
+                AND t.RARITY = #{rarity}
+            </if>
+            <if test="type !=null and type !='' ">
+                AND t.TYPE = #{type}
+            </if>
+            <if test="imageUrl !=null and imageUrl !='' ">
+                AND t.IMAGEURL = #{imageUrl}
+            </if>
+            <if test="imageTUrl !=null and imageTUrl !='' ">
+                AND t.IMAGETURL = #{imageTUrl}
+            </if>
+            <if test="maxLevel !=null and maxLevel !='' ">
+                AND t.MAXLEVEL = #{maxLevel}
+            </if>
+            <if test="minHP !=null and minHP !='' ">
+                AND t.MINHP = #{minHP}
+            </if>
+            <if test="minSmile !=null and minSmile !='' ">
+                AND t.MINSMILE = #{minSmile}
+            </if>
+            <if test="minPure !=null and minPure !='' ">
+                AND t.MINPURE = #{minPure}
+            </if>
+            <if test="minCool !=null and minCool !='' ">
+                AND t.MINCOOL = #{minCool}
+            </if>
+            <if test="maxHP !=null and maxHP !='' ">
+                AND t.MAXHP = #{maxHP}
+            </if>
+            <if test="maxSmile !=null and maxSmile !='' ">
+                AND t.MAXSMILE = #{maxSmile}
+            </if>
+            <if test="maxPure !=null and maxPure !='' ">
+                AND t.MAXPURE = #{maxPure}
+            </if>
+            <if test="maxCool !=null and maxCool !='' ">
+                AND t.MAXCOOL = #{maxCool}
+            </if>
+            <if test="appeal !=null and appeal !='' ">
+                AND t.APPEAL = #{appeal}
+            </if>
+            <if test="appealInfo !=null and appealInfo !='' ">
+                AND t.APPEALINFO = #{appealInfo}
+            </if>
+            <if test="centerSkill !=null and centerSkill !='' ">
+                AND t.CENTERSKILL = #{centerSkill}
+            </if>
+            <if test="centerSkillInfo !=null and centerSkillInfo !='' ">
+                AND t.CENTERSKILLINFO = #{centerSkillInfo}
+            </if>
+            <if test="createTime !=null and createTime !='' ">
+                AND t.CREATETIME = #{createTime}
+            </if>
+            <if test="remark !=null and remark !='' ">
+                AND t.REMARK = #{remark}
+            </if>
+        </where>
+        <if test="sortSql !=null and sortSql !='' ">
+            ORDER BY ${sortSql}
+        </if>
+</select>
+
+<insert id="cgms_addLoveLive" parameterType="LoveLiveEvt">
+        <![CDATA[  
+            INSERT INTO t_tgks_cgms_lovelive (id, cardid, character, rarity, type, imageurl, imageturl, maxlevel, minhp, minsmile, minpure, mincool, maxhp, maxsmile, maxpure, maxcool, appeal, appealinfo, centerskill, centerskillinfo, createtime, remark) 
+            VALUES (#{id}, #{cardId}, #{character}, #{rarity}, #{type}, #{imageUrl}, #{imageTUrl}, #{maxLevel}, #{minHP}, #{minSmile}, #{minPure}, #{minCool}, #{maxHP}, #{maxSmile}, #{maxPure}, #{maxCool}, #{appeal}, #{appealInfo}, #{centerSkill}, #{centerSkillInfo}, #{createTime}, #{remark}) 
+        ]]>
+</insert>
+
+<update id="cgms_updateLoveLive" parameterType="LoveLiveEvt">
+        <![CDATA[  
+            UPDATE t_tgks_cgms_lovelive SET 
+                       cardid = #{cardId},
+                       character = #{character},
+                       rarity = #{rarity},
+                       type = #{type},
+                       imageurl = #{imageUrl},
+                       imageturl = #{imageTUrl},
+                       maxlevel = #{maxLevel},
+                       minhp = #{minHP},
+                       minsmile = #{minSmile},
+                       minpure = #{minPure},
+                       mincool = #{minCool},
+                       maxhp = #{maxHP},
+                       maxsmile = #{maxSmile},
+                       maxpure = #{maxPure},
+                       maxcool = #{maxCool},
+                       appeal = #{appeal},
+                       appealinfo = #{appealInfo},
+                       centerskill = #{centerSkill},
+                       centerskillinfo = #{centerSkillInfo},
+                       createtime = #{createTime},
+                       remark = #{remark}
+             WHERE ID = #{id}
+        ]]>
+</update>
+
+<delete id="cgms_deleteLoveLive" parameterType="list">
+        <![CDATA[  
+            DELETE FROM t_tgks_cgms_lovelive WHERE id IN
+        ]]>
+        <foreach collection="list" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+</delete>
+</mapper>

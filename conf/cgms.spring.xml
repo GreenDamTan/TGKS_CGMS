@@ -16,6 +16,18 @@
  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
   <!-- bean -->
-  
+  <!-- ﻿lovelive_dao 配置 -->
+  <bean id="cgms_loveLiveDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="com.moemao.tgks.cgms.lovelive.dao.LoveLiveDao" />
+    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
+  <!-- ﻿lovelive_service 配置 -->
+  <bean id="cgms_loveLiveService" class="com.moemao.tgks.cgms.lovelive.service.impl.LoveLiveServiceImpl">
+    <property name="cgms_loveLiveDao" ref="cgms_loveLiveDao" />
+  </bean>
+  <!-- ﻿lovelive_action 配置 -->
+  <bean id="cgms_loveLiveAction" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction">
+    <property name="cgms_loveLiveService" ref="cgms_loveLiveService" />
+  </bean>
   
 </beans>

@@ -3,10 +3,34 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
     "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-  <package namespace="/wms" name="wms" extends="struts-default">
+  <package namespace="/cgms" name="cgms" extends="struts-default">
 
     <!-- action -->
-    
+    <!-- cgms_lovelive -->
+    <action name="loveLiveManager" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="loveLiveManager">
+        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveManager.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="queryLoveLive" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="queryLoveLive">
+        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveList.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editLoveLivePage" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="editLoveLivePage">
+        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveEdit.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editLoveLive" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="editLoveLive">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="deleteLoveLive" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="deleteLoveLive">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
     
   </package>
 </struts>
