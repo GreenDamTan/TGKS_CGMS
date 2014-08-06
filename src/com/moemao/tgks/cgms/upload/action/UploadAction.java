@@ -61,7 +61,7 @@ public class UploadAction extends TGKSAction
     	
     	FileUtils.copyFile(upload, copyFile);
     	
-    	uploadUrl = basePath + path + File.separator + newFileName;
+    	uploadUrl = basePath + path + newFileName;
     	
     	return SUCCESS;
     }
