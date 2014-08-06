@@ -41,7 +41,7 @@ public class LoveLiveAction extends TGKSAction
 	/**
 	 * ﻿LoveLive查询条件封装对象
 	 */
-	private LoveLiveReq loveLiveReq;
+	private LoveLiveReq loveLiveReq = new LoveLiveReq();
 	
 	public String loveLiveManager()
 	{

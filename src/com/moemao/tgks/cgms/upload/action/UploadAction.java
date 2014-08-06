@@ -32,14 +32,14 @@ public class UploadAction extends TGKSAction
     
     /**
      * 
-     * @Title: updateCardImage
+     * @Title: uploadCardImage
      * @Description: 通用卡牌图上传action 相对存放路径path（无斜杠开头 左斜杠结尾） 保存文件名name（不带后缀名）
      * @return
      * @throws Exception
      * @return String 返回类型
      * @throws
      */
-    public String updateCardImage() throws Exception
+    public String uploadCardImage() throws Exception
     {
     	if (CommonUtil.isEmpty(path) || CommonUtil.isEmpty(name))
     	{
@@ -61,7 +61,7 @@ public class UploadAction extends TGKSAction
     	
     	FileUtils.copyFile(upload, copyFile);
     	
-    	uploadUrl = basePath + path + newFileName;
+    	uploadUrl = basePath + path + File.separator + newFileName;
     	
     	return SUCCESS;
     }

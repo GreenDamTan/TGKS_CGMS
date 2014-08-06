@@ -5,20 +5,25 @@
 <struts>
   <package namespace="/cgms" name="cgms" extends="struts-default">
 
-    <!-- action -->
-    <!-- cgms_lovelive -->
+    <!-- upload action -->
+	<action name="uploadCardImage" class="com.moemao.tgks.cgms.upload.action.UploadAction" method="uploadCardImage">  
+        <result name="success">/WEB-INF/jsp/cgms/upload/upload.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- cgms_loveLive -->
     <action name="loveLiveManager" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="loveLiveManager">
-        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveManager.jsp</result>
+        <result name="success">/WEB-INF/jsp/cgms/loveLive/loveLiveManager.jsp</result>
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
 
     <action name="queryLoveLive" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="queryLoveLive">
-        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveList.jsp</result>
+        <result name="success">/WEB-INF/jsp/cgms/loveLive/loveLiveList.jsp</result>
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
 
     <action name="editLoveLivePage" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="editLoveLivePage">
-        <result name="success">/WEB-INF/jsp/cgms/lovelive/loveLiveEdit.jsp</result>
+        <result name="success">/WEB-INF/jsp/cgms/loveLive/loveLiveEdit.jsp</result>
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
 
