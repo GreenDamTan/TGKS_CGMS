@@ -6,7 +6,7 @@
     <resultMap id="LoveLiveEvtMap" type="LoveLiveEvt">
         <id property="id" column="ID" />
         <result property="cardId" column="CARDID" />
-        <result property="character" column="CHARACTER" />
+        <result property="girl" column="GIRL" />
         <result property="rarity" column="RARITY" />
         <result property="type" column="TYPE" />
         <result property="imageUrl" column="IMAGEURL" />

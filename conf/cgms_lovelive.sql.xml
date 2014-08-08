@@ -5,7 +5,7 @@
 <mapper namespace="com.moemao.tgks.cgms.lovelive.dao.LoveLiveDao">
 <select id="cgms_queryLoveLive" parameterType="LoveLiveReq" resultType="LoveLiveEvt" resultMap="LoveLiveEvtMap">
         <![CDATA[  
-            SELECT t.id, t.cardid, t.character, t.rarity, t.type, t.imageurl, t.imageturl, t.maxlevel, t.minhp, t.minsmile, t.minpure, t.mincool, t.maxhp, t.maxsmile, t.maxpure, t.maxcool, t.appeal, t.appealinfo, t.centerskill, t.centerskillinfo, t.createtime, t.remark FROM t_tgks_cgms_lovelive t
+            SELECT t.id, t.cardid, t.girl, t.rarity, t.type, t.imageurl, t.imageturl, t.maxlevel, t.minhp, t.minsmile, t.minpure, t.mincool, t.maxhp, t.maxsmile, t.maxpure, t.maxcool, t.appeal, t.appealinfo, t.centerskill, t.centerskillinfo, t.createtime, t.remark FROM t_tgks_cgms_lovelive t
         ]]>
         <where>
                 1=1
@@ -15,8 +15,8 @@
             <if test="cardId !=null and cardId !='' ">
                 AND t.CARDID = #{cardId}
             </if>
-            <if test="character !=null and character !='' ">
-                AND t.CHARACTER = #{character}
+            <if test="girl !=null and girl !='' ">
+                AND t.GIRL = #{girl}
             </if>
             <if test="rarity !=null and rarity !='' ">
                 AND t.RARITY = #{rarity}
@@ -83,8 +83,8 @@
 
 <insert id="cgms_addLoveLive" parameterType="LoveLiveEvt">
         <![CDATA[  
-            INSERT INTO t_tgks_cgms_lovelive (id, cardid, character, rarity, type, imageurl, imageturl, maxlevel, minhp, minsmile, minpure, mincool, maxhp, maxsmile, maxpure, maxcool, appeal, appealinfo, centerskill, centerskillinfo, createtime, remark) 
-            VALUES (#{id}, #{cardId}, #{character}, #{rarity}, #{type}, #{imageUrl}, #{imageTUrl}, #{maxLevel}, #{minHP}, #{minSmile}, #{minPure}, #{minCool}, #{maxHP}, #{maxSmile}, #{maxPure}, #{maxCool}, #{appeal}, #{appealInfo}, #{centerSkill}, #{centerSkillInfo}, #{createTime}, #{remark}) 
+            INSERT INTO t_tgks_cgms_lovelive (id, cardid, girl, rarity, type, imageurl, imageturl, maxlevel, minhp, minsmile, minpure, mincool, maxhp, maxsmile, maxpure, maxcool, appeal, appealinfo, centerskill, centerskillinfo, createtime, remark) 
+            VALUES (#{id}, #{cardId}, #{girl}, #{rarity}, #{type}, #{imageUrl}, #{imageTUrl}, #{maxLevel}, #{minHP}, #{minSmile}, #{minPure}, #{minCool}, #{maxHP}, #{maxSmile}, #{maxPure}, #{maxCool}, #{appeal}, #{appealInfo}, #{centerSkill}, #{centerSkillInfo}, #{createTime}, #{remark}) 
         ]]>
 </insert>
 
@@ -92,7 +92,7 @@
         <![CDATA[  
             UPDATE t_tgks_cgms_lovelive SET 
                        cardid = #{cardId},
-                       character = #{character},
+                       girl = #{girl},
                        rarity = #{rarity},
                        type = #{type},
                        imageurl = #{imageUrl},

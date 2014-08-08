@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS `t_tgks_cgms_lovelive`;
 CREATE TABLE IF NOT EXISTS `t_tgks_cgms_lovelive` (
   `id` varchar(30) NOT NULL COMMENT '表唯一主键',
   `cardid` varchar(30) NOT NULL COMMENT '卡牌ID',
-  `character` varchar(30) default NULL COMMENT '角色',
+  `girl` varchar(30) default NULL COMMENT '角色',
   `rarity` varchar(30) default NULL COMMENT '稀有度（r sr ur）',
   `type` varchar(30) default NULL COMMENT '类型（smile pure cool all）',
   `imageurl` varchar(200) default NULL COMMENT '图片URL',

@@ -17,7 +17,7 @@ public class LoveLiveEvt
 	/**
 	 * 角色
 	 */
-	private String character;
+	private String girl;
 	
 	/**
 	 * 稀有度
@@ -119,7 +119,7 @@ public class LoveLiveEvt
 	{
 		return String
 		        .format("id:%S\ncardId:%S\ncharacter:%S\nrarity:%S\ntype:%S\nimageUrl:%S\nimageTUrl:%S\nmaxLevel:%S\nminHP:%S\nminSmile:%S\nminPure:%S\nminCool:%S\nmaxHP:%S\nmaxSmile:%S\nmaxPure:%S\nmaxCool:%S\nappeal:%S\nappealInfo:%S\ncenterSkill:%S\ncenterSkillInfo:%S\ncreateTime:%S\nremark:%S\n",
-		                id, cardId, character, rarity, type, imageUrl,
+		                id, cardId, girl, rarity, type, imageUrl,
 		                imageTUrl, maxLevel, minHP, minSmile, minPure, minCool,
 		                maxHP, maxSmile, maxPure, maxCool, appeal, appealInfo,
 		                centerSkill, centerSkillInfo, createTime, remark);
@@ -157,22 +157,16 @@ public class LoveLiveEvt
 		this.cardId = cardId;
 	}
 	
-	/**
-	 * @return 返回 character
-	 */
-	public String getCharacter()
-	{
-		return character;
-	}
-	
-	/**
-	 * @param 对character进行赋值
-	 */
-	public void setCharacter(String character)
-	{
-		this.character = character;
-	}
-	
+	public String getGirl()
+    {
+    	return girl;
+    }
+
+	public void setGirl(String girl)
+    {
+    	this.girl = girl;
+    }
+
 	/**
 	 * @return 返回 rarity
 	 */

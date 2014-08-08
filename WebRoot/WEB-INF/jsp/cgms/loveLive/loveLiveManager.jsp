@@ -12,7 +12,7 @@
 	<form id="loveLiveReq" action="../cgms/queryLoveLive.action" method="post">
 		<table>
 			<tr>
-				<td><label>名称: </label></td><td><input type="text" name="loveLiveReq.name" /></td>
+				<td><label>编号: </label></td><td><input type="text" name="loveLiveReq.cardId" /></td>
 				<td>
 				
 				</td>
@@ -51,8 +51,8 @@ $(document).ready(function(){
 	// 新增/更新窗口
 	$( "#loveLiveEdit" ).dialog({
 		modal: true,
-		height:500,
-		width:750,
+		height:800,
+		width:800,
 		autoOpen: false,
 		show: "fold",
 		hide: "fold",
