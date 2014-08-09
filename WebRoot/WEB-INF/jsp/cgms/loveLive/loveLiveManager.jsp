@@ -13,8 +13,39 @@
 		<table>
 			<tr>
 				<td><label>编号: </label></td><td><input type="text" name="loveLiveReq.cardId" /></td>
+				<td>角色: </td>
 				<td>
-				
+					<select name="loveLiveReq.girl">
+						<option value="">全部</option>
+						<option value="Ayase Eli">絢瀬 絵里</option>
+						<option value="Hoshizora Rin">星空 凛</option>
+						<option value="Koizumi Hanayo">小泉 花陽</option>
+						<option value="Kousaka Honoka">高坂 穂乃果</option>
+						<option value="Minami Kotori">南 ことり</option>
+						<option value="Nishikino Maki">西木野 真姫</option>
+						<option value="Sonoda Umi">園田 海未</option>
+						<option value="Toujou Nozomi">東條 希</option>
+						<option value="Yazawa Nico">矢澤 にこ</option>
+					</select>
+				</td>
+				<td>稀有度: </td>
+				<td>
+					<select name="loveLiveReq.rarity">
+						<option value="">全部</option>
+						<option value="UR">UR</option>
+						<option value="SR">SR</option>
+						<option value="R">R</option>
+					</select>
+				</td>
+				<td>类型: </td>
+				<td>
+					<select name="loveLiveReq.type">
+						<option value="">全部</option>
+						<option value="Smile">Smile</option>
+						<option value="Pure">Pure</option>
+						<option value="Cool">Cool</option>
+						<option value="All">All</option>
+					</select>
 				</td>
 				<td>
 				<button id="clearLoveLive">重置</button>

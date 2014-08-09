@@ -1,4 +1,7 @@
-﻿TGKS_CGMS v0.2.1	2014.8.9
+﻿TGKS_CGMS v0.3.0	2014.8.9
+1、LoveLive管理模块全部完成，列表页采用图片缩放
+
+TGKS_CGMS v0.2.1	2014.8.8
 1、LoveLive记录保存功能完成
 2、修改t_tgks_cgms_lovelive表字段character->girl，该字段为mysql系统关键字，使用mybatis时会报错
 
