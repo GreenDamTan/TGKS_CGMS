@@ -41,9 +41,9 @@
 		</td>
 	</tr>
 	<tr><!-- imageUrl imageTUrl -->
-		<td>未觉醒</td>
+		<td>本地图</td>
 		<td colspan="3"><input type="text" size="35" name="loveLiveEvt.imageUrl" id="loveLiveImageUrl" value="${loveLiveEvt.imageUrl }" /></td>
-		<td>觉醒后</td>
+		<td>网络图</td>
 		<td colspan="3"><input type="text" size="35" name="loveLiveEvt.imageTUrl" id="loveLiveImageTUrl" value="${loveLiveEvt.imageTUrl }" /></td>
 	</tr>
 	<tr><!-- upload -->
@@ -57,8 +57,10 @@
 							<input type="file" id="loveLiveUpload" name="upload" size="30"/>
 						</td>
 						<td >
-							<button id="uploadImageUrl">未觉醒</button>
-							<button id="uploadImageTUrl">觉醒后</button>
+							<button id="uploadImageUrl">上传</button>
+							<button id="uploadImageTUrl">显示</button>
+							<!-- <button id="uploadImageUrl">未觉醒</button> -->
+							<!-- <button id="uploadImageTUrl">觉醒后</button> -->
 						</td>
 					</tr>
 				</table>
@@ -159,6 +161,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	/*
 	$( "#uploadImageTUrl" ).button().click(function() {
 		// 先校验是否选中图片再上传
 		if ($("#loveLiveUpload").val() == null || $("#loveLiveUpload").val() == "")
@@ -192,6 +195,10 @@ $(document).ready(function(){
 		
 		$("#loveLiveImageUploadForm").ajaxSubmit(options);
 		return false;
+	});
+	*/
+	$( "#uploadImageTUrl" ).button().click(function() {
+		$("#loveLiveImageTUrlPic").attr("src", $("#loveLiveImageTUrl").val());
 	});
 });
 </script>

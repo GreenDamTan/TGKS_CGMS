@@ -71,12 +71,7 @@ public class LoveLiveAction extends TGKSAction
 		if (CommonUtil.isEmpty(loveLiveEvt.getId()))
 		{
 			result = cgms_loveLiveService.addLoveLive(loveLiveEvt);
-			CommonUtil.systemLog("cgms/editLoveLive.action",
-			                CommonConstant.SYSTEMLOG_TYPE_1,
-			                result == 0 ? CommonConstant.FAILD
-			                        : CommonConstant.SUCCESS,
-			                String.format("新增loveLiveEvt\n%S",
-			                        loveLiveEvt.toString()));
+			CommonUtil.systemLog("cgms/editLoveLive.action", CommonConstant.SYSTEMLOG_TYPE_1, result == 0 ? CommonConstant.FAILD : CommonConstant.SUCCESS, String.format("新增loveLiveEvt\n%S", loveLiveEvt.toString()));
 		}
 		else
 		{

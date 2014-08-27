@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <package namespace="/cgweb" name="cgweb" extends="struts-default">
+
+    <action name="login" class="com.moemao.tgks.cgweb.login.action.LoginAction" method="login">
+        <result name="success">/WEB-INF/jsp/cgweb/main/index.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <action name="register" class="com.moemao.tgks.cgweb.login.action.LoginAction" method="register">
+        <result name="success">/cgweb/index.jsp</result>
+        <result name="error">/cgweb/register.jsp</result>
+    </action>
+    
+    <action name="loveLiveCard" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="loveLiveCard">
+        <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCard.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <action name="queryLoveLiveCard" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="queryLoveLiveCard">
+        <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCardList.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+  </package>
+</struts>

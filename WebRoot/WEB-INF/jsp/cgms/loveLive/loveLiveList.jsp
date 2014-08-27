@@ -12,8 +12,8 @@
             <tr class="ui-widget-header ">
                 <th width="20"><input type="checkbox" id="allLoveLiveId" name="allLoveLiveId"  /></th>
 				<th>编号</th>
-				<th>未觉醒</th>
-				<th>觉醒后</th>
+				<th>本地图</th>
+				<th>网络图</th>
 				<th>角色</th>
 				<th>稀有度</th>
 				<th>类型</th>
