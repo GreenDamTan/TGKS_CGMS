@@ -1,4 +1,7 @@
-﻿TGKS_CGMS v0.4.0	2014.8.26
+﻿TGKS_CGMS v0.41		2014.8.28
+1、修改LoveLive上传机制，上传图片自动解析并填入cardId 角色 类型 稀有度，卡牌收集工具页面已经保存在cgms工程Tools目录下
+
+TGKS_CGMS v0.4.0	2014.8.26
 1、修改lovelive保存方式，迎合cgweb的选图系统，cardId目前分"数字"以及"数字t"两种，原先的imageTUrl改为网络小图的存放字段，CGWEB展示网络小图，尽量减少网络流量也防止盗链
 2、CGWEB注册、登录功能完成，用户信息与UMS_MEMBER表共用
 3、CGWEB选图页面雏形完成，引入image-picker插件，暂时无法使用鼠标拖动进行多选，备选方案可以使用JQueryUI自带的selecter，详情看JQueryUI的Demo页面

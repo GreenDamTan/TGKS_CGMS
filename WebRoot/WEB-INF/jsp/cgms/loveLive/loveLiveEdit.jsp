@@ -134,11 +134,53 @@ $(document).ready(function(){
 			return;
 		}
 		// 校验是否填入cardId
+		/*
 		if ($("#loveLiveCardId").val() == null || $("#loveLiveCardId").val() == "")
 		{
 			alert("请填写卡片ID");
 			return;
 		}
+		*/
+		
+		//--------------------------------------------------------------------------------------------------
+		//alert($("#loveLiveUpload").val().split("\\")[$("#loveLiveUpload").val().split("\\").length-1]);
+		
+		var strs = $("#loveLiveUpload").val().split("\\")[$("#loveLiveUpload").val().split("\\").length-1].split(".")[0].split("_");
+		
+		// stra[0] 角色
+		$("#loveLiveGirl option").each(function(){
+			if ($(this).val().indexOf(strs[0]) >= 0)
+			{
+				$(this).attr("selected","true");
+			}
+		});
+		
+		// strs[2] 类别
+		$("#loveLiveType option").each(function(){
+			if (strs[2] == $(this).val().toLowerCase())
+			{
+				$(this).attr("selected","true");
+			}
+		});
+		
+		// strs[3] 稀有度
+		$("#loveLiveRarity option").each(function(){
+			if (strs[3] == $(this).val().toLowerCase())
+			{
+				$(this).attr("selected","true");
+			}
+		});
+		
+		// strs[1] + strs[4] cardId
+		if (strs.length > 4)
+		{
+			$("#loveLiveCardId").val(strs[1] + "t");
+		}
+		else
+		{
+			$("#loveLiveCardId").val(strs[1]);
+		}
+		//--------------------------------------------------------------------------------------------------
 		
 		var cardName = $("#loveLiveGirl").val().split(" ")[1] + "_" + $("#loveLiveCardId").val() + "_" + $("#loveLiveType").val().toLowerCase() + "_" + $("#loveLiveRarity").val().toLowerCase();
 		$("#path").val("LoveLive/" + $("#loveLiveGirl").val() + "/" + $("#loveLiveRarity").val() + "/");
