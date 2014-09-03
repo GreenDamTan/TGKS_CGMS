@@ -30,4 +30,18 @@
     <property name="cgms_loveLiveService" ref="cgms_loveLiveService" />
   </bean>
   
+  <!-- ﻿cardorder_dao 配置 -->
+  <bean id="cgms_cardOrderDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="com.moemao.tgks.cgms.cardorder.dao.CardOrderDao" />
+    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
+  <!-- ﻿cardorder_service 配置 -->
+  <bean id="cgms_cardOrderService" class="com.moemao.tgks.cgms.cardorder.service.impl.CardOrderServiceImpl">
+    <property name="cgms_cardOrderDao" ref="cgms_cardOrderDao" />
+  </bean>
+  <!-- ﻿cardorder_action 配置 -->
+  <bean id="cgms_cardOrderAction" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction">
+    <property name="cgms_cardOrderService" ref="cgms_cardOrderService" />
+  </bean>
+  
 </beans>

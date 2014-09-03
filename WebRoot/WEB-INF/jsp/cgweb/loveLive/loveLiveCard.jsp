@@ -18,6 +18,21 @@
 
 <input type="hidden" id="loveLiveManagerSubmit" name="loveLiveManagerSubmit" value="0" />
 <div class="ui-widget">
+	<form id="loveLiveAdd" action="../cgms/addCardOrder.action" method="post">
+		<table>
+			<tr>
+				<td>
+					<s:property value="#session.user_info.username"/>
+					<a href="<%=basePath%>cgweb">退出</a>
+				</td>
+				<td>
+					<button id="addLoveLive">加入</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div class="ui-widget">
 	<form id="loveLiveReq" action="../cgweb/queryLoveLiveCard.action" method="post">
 		<table>
 			<tr>
@@ -79,13 +94,24 @@ $(document).ready(function(){
 	
 	 // 刷新按钮
 	$( "#queryLoveLive" ).button().click(function() {
-			query();
+		query();
 		return false;
 	});
 	 
 	// 重置按钮
 	$( "#clearLoveLive" ).button().click(function() {
-			$("#loveLiveReq").clearForm();
+		$("#loveLiveReq").clearForm();
+		return false;
+	});
+	
+	// 加入订单
+	$( "#addLoveLive" ).button().click(function() {
+		//alert($("#loveLiveSelect").val());
+		if ($("#loveLiveSelect").val() == null)
+		{
+			alert("请先选择图片");
+		}
+		
 		return false;
 	});
 });

@@ -37,5 +37,31 @@
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
     
+    <!-- cgms_cardorder -->
+    <action name="cardOrderManager" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="cardOrderManager">
+        <result name="success">/WEB-INF/jsp/cgms/cardOrder/cardOrderManager.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="queryCardOrder" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="queryCardOrder">
+        <result name="success">/WEB-INF/jsp/cgms/cardOrder/cardOrderList.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editCardOrderPage" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="editCardOrderPage">
+        <result name="success">/WEB-INF/jsp/cgms/cardOrder/cardOrderEdit.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editCardOrder" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="editCardOrder">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="deleteCardOrder" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="deleteCardOrder">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
   </package>
 </struts>

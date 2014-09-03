@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+  "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moemao.tgks.cgms.cardorder.dao.CardOrderDao">
+<select id="cgms_queryCardOrder" parameterType="CardOrderReq" resultType="CardOrderEvt" resultMap="CardOrderEvtMap">
+        <![CDATA[  
+            SELECT t.id, t.uid, t.username, t.alww, t.type, t.status, t.cardid, t.createtime, t.remark FROM t_tgks_cgms_cardorder t
+        ]]>
+        <where>
+                1=1
+            <if test="id !=null and id !='' ">
+                AND t.ID = #{id}
+            </if>
+            <if test="uid !=null and uid !='' ">
+                AND t.UID = #{uid}
+            </if>
+            <if test="username !=null and username !='' ">
+                AND t.USERNAME = #{username}
+            </if>
+            <if test="alww !=null and alww !='' ">
+                AND t.ALWW = #{alww}
+            </if>
+            <if test="type !=null and type !='' ">
+                AND t.TYPE = #{type}
+            </if>
+            <if test="status !=null and status !='' ">
+                AND t.STATUS = #{status}
+            </if>
+            <if test="cardId !=null and cardId !='' ">
+                AND t.CARDID = #{cardId}
+            </if>
+            <if test="createTime !=null and createTime !='' ">
+                AND t.CREATETIME = #{createTime}
+            </if>
+            <if test="remark !=null and remark !='' ">
+                AND t.REMARK = #{remark}
+            </if>
+        </where>
+        <if test="sortSql !=null and sortSql !='' ">
+            ORDER BY ${sortSql}
+        </if>
+</select>
+
+<insert id="cgms_addCardOrder" parameterType="CardOrderEvt">
+        <![CDATA[  
+            INSERT INTO t_tgks_cgms_cardorder (id, uid, username, alww, type, status, cardid, createtime, remark) 
+            VALUES (#{id}, #{uid}, #{username}, #{alww}, #{type}, #{status}, #{cardId}, #{createTime}, #{remark}) 
+        ]]>
+</insert>
+
+<update id="cgms_updateCardOrder" parameterType="CardOrderEvt">
+        <![CDATA[  
+            UPDATE t_tgks_cgms_cardorder SET 
+                       uid = #{uid},
+                       username = #{username},
+                       alww = #{alww},
+                       type = #{type},
+                       status = #{status},
+                       cardid = #{cardId},
+                       createtime = #{createTime},
+                       remark = #{remark}
+             WHERE ID = #{id}
+        ]]>
+</update>
+
+<delete id="cgms_deleteCardOrder" parameterType="list">
+        <![CDATA[  
+            DELETE FROM t_tgks_cgms_cardorder WHERE id IN
+        ]]>
+        <foreach collection="list" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+</delete>
+</mapper>
