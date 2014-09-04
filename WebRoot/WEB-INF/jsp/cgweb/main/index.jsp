@@ -10,10 +10,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="utf-8" />
     <base href=<%=basePath%>> 
     <title>卡牌定制下单系统——猫萌公社</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/cgweb/login/style.css" />
 </head>
 <body>
+<div align="left">
+	欢迎登陆：<s:property value="#session.user_info.username"/>
+					<a href="<%=basePath%>cgweb">退出系统</a>
+</div>
 <div align="center">
-	<a href="<%=basePath%>cgweb/loveLiveCard.action">LoveLive</a> | <a href="<%=basePath%>cgweb/kssmaCard.action">扩散性MA</a>
+	<a href="<%=basePath%>cgweb/loveLiveCard.action"><img src="resources/images/cgweb/logo_lovelive.png" /></a> <a href="<%=basePath%>cgweb/kssmaCard.action"><img src="resources/images/cgweb/logo_kssma.png" /></a>
 </div>
 </body>
 </html>

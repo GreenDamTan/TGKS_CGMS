@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+html,*,body, div, ul,ol, li,h1,h2,h3,h4,h5,h6,p,span{margin:0;padding:0;}
+body{font-family:"微软雅黑", Arial, Helvetica, sans-serif;color:#666666;line-height:25px;font-size:14px;background:#f2f2f2;}
+em{font-style:normal;}
+a img, :link img, :visited img{border:0;}
+a:link, a:visited{text-decoration:none;color:#666666;}
+a:hover,a:focus{text-decoration:underline;color:#0573bd;text-decoration:none;}
+ul, ul li{list-style-type:none;}
+
+
+#top_bg{height:45px;width:100%;background:#333;box-shadow:1px 1px 7px #999;position:fixed;z-index:999;left:0;border-bottom:#C6C6C6 solid 1px;}
+
+.nav_z{width:auto!important;height:45px;float:left;position:relative;z-index:999 ;}
+#navul li a, #navul li a:visited{color:#FFF;font-weight:500;letter-spacing:2px;}
+#navul li{float:left;height:45px;width: 150px;position:relative;text-align:center;line-height:45px;margin-top: 5px;}
