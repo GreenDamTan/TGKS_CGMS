@@ -1,4 +1,9 @@
-﻿TGKS_CGMS v0.41		2014.8.28
+﻿TGKS_CGMS v0.5.0    2014.9.10
+1、CGMS中新增的cardOrder模块基本完成
+2、卡牌展示页面功能完善，顶部浮动工具栏，账号登出、类型切换、查询条件，底部浮动工具栏，全选、全取消、加入购买列表，顶部页面与底部页面分离
+3、修正SQL建表代码t_tgks_cgms_cardorder表中  `cardid` 字段 varchar(5000) 
+
+TGKS_CGMS v0.4.1    2014.8.28
 1、修改LoveLive上传机制，上传图片自动解析并填入cardId 角色 类型 稀有度，卡牌收集工具页面已经保存在cgms工程Tools目录下
 
 TGKS_CGMS v0.4.0	2014.8.26

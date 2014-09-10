@@ -14,32 +14,26 @@
 	<meta http-equiv="keywords" content="幻影帝国,猫盟公社,卡牌定制下单系统">
 	<link rel="stylesheet" type="text/css" href="../resources/css/cgweb/login/style.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/cgweb/cardlist/css/style.css" />
+	<script type="text/javascript"  src="../resources/css/cgweb/cardlist/js/toolbar.js"></script>
 	<script type="text/javascript"  src="../resources/css/cgweb/cardlist/js/nav.js"></script>
 	<style type="text/css">
-	.logo {height: 120px;}
 	</style>	
 </head>
 <body>
 
-<input type="hidden" id="loveLiveManagerSubmit" name="loveLiveManagerSubmit" value="0" />
+<!-- 增加卡片form -->
+<form id="cardOrderForm" action="../cgweb/addCardOrder.action" method="post">
+	<input type="hidden" id="cardOrderCardId" name="cardOrder.cardId" />
+	<input type="hidden" id="cardOrderType" name="cardOrder.type" value="1" /><!-- LoveLive 1 -->
+</form>
 <div id="top_bg">
 	<div class="top">
 		<!--导航开始-->
 		<div class="nav_z">
 			<ul id="navul" class="cl">
-				<li style="width:280px;">
-					<form id="loveLiveAdd" action="../cgms/addCardOrder.action" method="post">
-					<a>欢迎：<s:property value="#session.user_info.username"/></a>
-					<a href="<%=basePath%>cgweb">退出系统</a>
-					</form>
-				</li>
-				<li style="width:80px;">
-					<a><b>游戏分类</b></a>
-					<!-- 
-					<a href="<%=basePath%>cgweb/loveLiveCard.action"><img class="logo" src="../resources/images/cgweb/logo_lovelive.png" /></a> <a href="<%=basePath%>cgweb/kssmaCard.action"><img class="logo" src="../resources/images/cgweb/logo_kssma.png" /></a>
-					 -->
-				</li>
-				<form id="loveLiveReq" action="../cgweb/queryLoveLiveCard.action" method="post">
+				<%@ include file="/WEB-INF/jsp/cgweb/main/toolbar.jsp" %>
+				<!-- 查询卡片form -->
+				<form id="reqForm" method="post">
 				<li>
 					<a>角色：</a>
 					<select class="cardoption" name="loveLiveReq.girl">
@@ -74,15 +68,9 @@
 						<option value="All">All</option>
 					</select>
 				</li>
-				<li style="width:80px;">
-					<!-- <button id="clearLoveLive">重置</button> -->
-					<button id="queryLoveLive">查询</button>
-				</li>
-				<li style="width:100px;">
-					<button id="addLoveLive">加入</button>
-				</li>
 				<li>
-					<button id="cardOrder">购物车</button>
+					<!-- <button id="clearReqForm">重置</button> -->
+					<button id="queryCard" class="queryButton">查询</button>
 				</li>
 				<li>
 				</li>
@@ -106,53 +94,30 @@
 <div class="ui-widget" align="center">
 	
 </div>
+<div id="cardDiv" align="center"></div>
 
-<div id="loveLiveDiv" align="center"></div>
+<%@ include file="/WEB-INF/jsp/cgweb/main/footbar.jsp" %>
 
 <script type="text/javascript">
 $(document).ready(function(){
 	var table=$.ajax({url:"../cgweb/queryLoveLiveCard.action",async:false});
-	$("#loveLiveDiv").html(table.responseText);
+	$("#cardDiv").html(table.responseText);
 	
 	function query()
 	{
-		var table=$.ajax({url:"../cgweb/queryLoveLiveCard.action", data:$("#loveLiveReq").formSerialize(), async:false});
-		$("#loveLiveDiv").html(table.responseText);
+		var table=$.ajax({url:"../cgweb/queryLoveLiveCard.action", data:$("#reqForm").formSerialize(), async:false});
+		$("#cardDiv").html(table.responseText);
 	}
 	
 	 // 刷新按钮
-	$( "#queryLoveLive" ).button().click(function() {
+	$( "#queryCard" ).button().click(function() {
 		query();
 		return false;
 	});
 	 
 	// 重置按钮
-	$( "#clearLoveLive" ).button().click(function() {
-		$("#loveLiveReq").clearForm();
-		return false;
-	});
-	
-	// 加入订单
-	$( "#addLoveLive" ).button({
-		icons: {
-			primary: "ui-icon-plus"
-			}
-		}).click(function() {
-		//alert($("#loveLiveSelect").val());
-		if ($("#loveLiveSelect").val() == null)
-		{
-			alert("请先选择图片");
-		}
-		
-		return false;
-	});
-	
-	// 购物车按钮
-	$( "#cardOrder" ).button({
-		icons: {
-			primary: "ui-icon-cart"
-			}
-		}).click(function() {
+	$( "#clearReqForm" ).button().click(function() {
+		$("#reqForm").clearForm();
 		return false;
 	});
 });

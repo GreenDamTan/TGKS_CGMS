@@ -12,6 +12,7 @@
 				<th>类型</th>
 				<th>状态</th>
 				<th>创建时间</th>
+				<th>备注</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
 						</s:elseif>
 					</td>
 					<td><s:date name="#evt.createTime" format="yyyy-MM-dd HH:mm:ss"/></td>
+					<td><s:property value='#evt.remark'/></td>
 				</tr>
 			</s:iterator>
 		</tbody>

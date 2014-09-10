@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `t_tgks_cgms_cardorder` (
   `alww` varchar(30) NOT NULL COMMENT '旺旺ID',
   `type` varchar(3) NOT NULL COMMENT '订单类型（1 LoveLive；2 KSSMA）',
   `status` varchar(3) NOT NULL COMMENT '状态（0 预定；1 完成）',
-  `cardid` varchar(200) default NULL COMMENT '卡片ID',
+  `cardid` varchar(5000) default NULL COMMENT '卡片ID',
   `createtime` timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
   `remark` varchar(500) default NULL COMMENT '备注',
   PRIMARY KEY  (`id`)

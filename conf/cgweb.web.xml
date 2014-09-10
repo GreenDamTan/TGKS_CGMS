@@ -15,14 +15,22 @@
         <result name="error">/cgweb/register.jsp</result>
     </action>
     
+    <!-- LoveLive 选卡页面 -->
     <action name="loveLiveCard" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="loveLiveCard">
         <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCard.jsp</result>
         <result name="error">/cgweb/index.jsp</result>
     </action>
     
+    <!-- LoveLive 卡片select -->
     <action name="queryLoveLiveCard" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="queryLoveLiveCard">
         <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCardList.jsp</result>
         <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <!-- 添加卡片之购物车 -->
+    <action name="addCardOrder" class="com.moemao.tgks.cgweb.card.action.CardOrderAction" method="addCardOrder">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
   </package>
 </struts>
