@@ -54,6 +54,11 @@ public int deleteCardOrder(List<String> ids)
 return cgms_cardOrderDao.cgms_deleteCardOrder(ids);
 }
 
+public int finishCardOrder(List<String> ids)
+{
+    return cgms_cardOrderDao.cgms_finishCardOrder(ids);
+}
+
 /**
  * @return 返回 cgms_cardOrderDao
  */

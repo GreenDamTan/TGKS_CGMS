@@ -21,4 +21,7 @@ public interface LoveLiveDao extends TGKSDao
 	
 	public int cgms_deleteLoveLive(List<String> list)
 	        throws DataAccessException;
+	
+	public List<LoveLiveEvt> queryLoveLiveByCardId(List<String> list)
+	        throws DataAccessException;
 }

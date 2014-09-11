@@ -246,6 +246,7 @@ $(document).ready(function(){
 				success: function(){
 					// 执行成功刷新form
 					query();
+					alert("操作成功"); 
 				},
 				error:function(){ 
 					alert("操作失败"); 

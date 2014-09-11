@@ -94,6 +94,17 @@ public class CardOrderAction extends TGKSAction
 		return SUCCESS;
 	}
 	
+	public String finishCardOrder()
+	{
+	    CommonUtil.debugLog(logger, CommonConstant.SYSTEM_INFO_LOG_METHOD_IN, "CardOrderAction.finishCardOrder");
+	    String ids = this.getRequest().getParameter("ids");
+        int result = cgms_cardOrderService.finishCardOrder(CommonUtil.stringToList(ids));
+        CommonUtil.systemLog("cgms/finishCardOrder.action", CommonConstant.SYSTEMLOG_TYPE_2, result == 0 ? CommonConstant.FAILD : CommonConstant.SUCCESS, String.format("完成cardOrderEvt\nID:%S", ids));
+        CommonUtil.infoLog(logger, CommonConstant.SYSTEM_INFO_LOG_METHOD_EXECUTE_NUMS, StringUtil.toBeString(result));
+        CommonUtil.debugLog(logger, CommonConstant.SYSTEM_INFO_LOG_METHOD_OUT, "CardOrderAction.finishCardOrder");
+	    return SUCCESS;
+	}
+	
 	/**
 	 * @return 返回 cgms_cardOrderService
 	 */

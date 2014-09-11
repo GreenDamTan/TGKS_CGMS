@@ -72,4 +72,13 @@
             #{ids}
         </foreach>
 </delete>
+
+<update id="cgms_finishCardOrder" parameterType="list">
+        <![CDATA[
+            UPDATE t_tgks_cgms_cardorder SET status = 1 WHERE id IN
+        ]]>
+        <foreach collection="list" item="ids" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+</update>
 </mapper>

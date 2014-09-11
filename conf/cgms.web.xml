@@ -63,5 +63,10 @@
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
     
+    <action name="finishCardOrder" class="com.moemao.tgks.cgms.cardorder.action.CardOrderAction" method="finishCardOrder">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
   </package>
 </struts>

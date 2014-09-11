@@ -17,4 +17,6 @@ public int updateCardOrder(CardOrderEvt cardOrderEvt);
 
 public int deleteCardOrder(List<String> ids);
 
+public int finishCardOrder(List<String> ids);
+
 }

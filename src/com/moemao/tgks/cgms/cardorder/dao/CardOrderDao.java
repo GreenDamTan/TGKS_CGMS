@@ -15,4 +15,6 @@ public int cgms_addCardOrder(CardOrderEvt cardOrderEvt) throws DataAccessExcepti
 public int cgms_updateCardOrder(CardOrderEvt cardOrderEvt) throws DataAccessException;
 
 public int cgms_deleteCardOrder(List<String> list) throws DataAccessException;
+
+public int cgms_finishCardOrder(List<String> list) throws DataAccessException;
 }

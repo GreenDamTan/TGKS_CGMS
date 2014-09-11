@@ -17,4 +17,5 @@ public interface LoveLiveService
 	
 	public int deleteLoveLive(List<String> ids);
 	
+	public List<LoveLiveEvt> queryLoveLiveByCardId(List<String> list);
 }

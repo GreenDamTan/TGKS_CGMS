@@ -2,7 +2,7 @@
 <div id="footBar" class="footBar">
     <button id="selectAll">全部选择</button>
     <button id="releaseAll">全部取消</button>
-    <button id="addCard">加入</button>
+    <button id="delCard">删除</button>
 </div>
 
 <script type="text/javascript">
@@ -29,10 +29,10 @@ $(document).ready(function(){
         $(".image_picker_selector li div").removeClass("selected");
     });
 
-    // 加入订单
-    $( "#addCard" ).button({
+    // 删除
+    $( "#delCard" ).button({
         icons: {
-            primary: "ui-icon-plus"
+            primary: "ui-icon-minus"
             }
         }).click(function() {
         //alert($("#cardSelect").val());
@@ -45,13 +45,15 @@ $(document).ready(function(){
         $("#cardOrderCardId").val($("#cardSelect").val());
         
         var options = {
-            url : "../cgweb/addCardOrder.action",
+            url : "../cgweb/delCardOrder.action",
             type : "POST",
             success : function(){
-                alert("加入成功");
+                alert("删除成功");
+                var table=$.ajax({url:"../cgweb/queryLoveLiveCart.action", data:$("#reqForm").formSerialize(), async:false});
+                $("#cardDivFrame").html(table.responseText);
             },
             error : function(){
-                alert("加入失败");
+                alert("删除失败");
             }
         };
         

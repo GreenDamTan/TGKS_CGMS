@@ -27,9 +27,39 @@
         <result name="error">/cgweb/index.jsp</result>
     </action>
     
-    <!-- 添加卡片之购物车 -->
+    <!-- lovelive购物车页面 -->
+    <action name="loveLiveCart" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="loveLiveCart">
+        <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCart.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- lovelive购物车历史页面 -->
+    <action name="loveLiveCartHistory" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="loveLiveCartHistory">
+        <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCartHistory.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- LoveLive 购物车页面卡片select -->
+    <action name="queryLoveLiveCart" class="com.moemao.tgks.cgweb.card.action.LoveLiveCardAction" method="queryLoveLiveCart">
+        <result name="success">/WEB-INF/jsp/cgweb/loveLive/loveLiveCardList.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <!-- 添加卡片至购物车 -->
     <action name="addCardOrder" class="com.moemao.tgks.cgweb.card.action.CardOrderAction" method="addCardOrder">
         <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- 从购物车中删除卡片 -->
+    <action name="delCardOrder" class="com.moemao.tgks.cgweb.card.action.CardOrderAction" method="delCardOrder">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- 订单历史 -->
+    <action name="cardOrderHistory" class="com.moemao.tgks.cgweb.card.action.CardOrderAction" method="cardOrderHistory">
+        <result name="success">/WEB-INF/jsp/cgweb/cardOrder/cardOrderHistory.jsp</result>
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
   </package>

@@ -3,7 +3,7 @@
 	<a>欢迎：<s:property value="#session.user_info.username"/></a>
 	<a href="<%=basePath%>cgweb">退出系统</a>
 </li>
-<li>
+<li style="width:80px;">
 	<div id="gameClassTag">
 		<a><b>游戏分类</b></a>
 	</div>
@@ -13,3 +13,15 @@
 		<a href="<%=basePath%>cgweb/kssmaCard.action"><img class="logo" src="../resources/images/cgweb/logo_kssma.png" /></a>
 	 </div>
 </li>
+<li style="width:80px;">
+    <a href="../cgweb/cardOrderHistory.action" style="color:red;"><b>购物车</b></a>
+</li>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    // 页面禁止右键
+   $(document).bind("contextmenu",function(e){  
+        return false;  
+    }); 
+});
+</script>

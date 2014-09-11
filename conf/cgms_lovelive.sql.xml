@@ -81,6 +81,16 @@
         </if>
 </select>
 
+<select id="queryLoveLiveByCardId" parameterType="list" resultType="LoveLiveEvt" resultMap="LoveLiveEvtMap">
+        <![CDATA[  
+            SELECT t.id, t.cardid, t.girl, t.rarity, t.type, t.imageurl, t.imageturl, t.maxlevel, t.minhp, t.minsmile, t.minpure, t.mincool, t.maxhp, t.maxsmile, t.maxpure, t.maxcool, t.appeal, t.appealinfo, t.centerskill, t.centerskillinfo, t.createtime, t.remark FROM t_tgks_cgms_lovelive t
+            WHERE t.cardid IN
+        ]]>
+        <foreach collection="list" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+</select>
+
 <insert id="cgms_addLoveLive" parameterType="LoveLiveEvt">
         <![CDATA[  
             INSERT INTO t_tgks_cgms_lovelive (id, cardid, girl, rarity, type, imageurl, imageturl, maxlevel, minhp, minsmile, minpure, mincool, maxhp, maxsmile, maxpure, maxcool, appeal, appealinfo, centerskill, centerskillinfo, createtime, remark) 
