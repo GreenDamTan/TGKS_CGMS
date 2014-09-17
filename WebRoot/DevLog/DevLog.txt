@@ -1,7 +1,9 @@
-﻿TGKS_CGMS v0.6.0    2014.9.12
+﻿TGKS_CGMS v0.6.1    2014.9.17
+1、新增 KSSMA的卡牌管理模块
+
+TGKS_CGMS v0.6.0    2014.9.12
 1、CGWEB的cardOrder记录页面完成
 2、每条cardOrder的详情页面完成，购物车为最新的一条记录，可以在购物车页面进行选择卡牌的删除操作
-
 
 TGKS_CGMS v0.5.0    2014.9.10
 1、CGMS中新增的cardOrder模块基本完成

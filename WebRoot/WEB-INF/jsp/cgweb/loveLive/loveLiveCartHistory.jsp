@@ -18,7 +18,7 @@
 	<script type="text/javascript"  src="../resources/css/cgweb/cardlist/js/nav.js"></script>
 	<style type="text/css">
 	</style>	
-</head>
+  </head>
 <body>
 
 <!-- 删除卡片form -->

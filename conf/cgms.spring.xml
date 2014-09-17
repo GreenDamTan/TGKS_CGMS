@@ -44,4 +44,17 @@
     <property name="cgms_cardOrderService" ref="cgms_cardOrderService" />
   </bean>
   
+  <!-- ﻿kssma_dao 配置 -->
+  <bean id="cgms_kssmaDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="com.moemao.tgks.cgms.kssma.dao.KssmaDao" />
+    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
+  <!-- ﻿kssma_service 配置 -->
+  <bean id="cgms_kssmaService" class="com.moemao.tgks.cgms.kssma.service.impl.KssmaServiceImpl">
+    <property name="cgms_kssmaDao" ref="cgms_kssmaDao" />
+  </bean>
+  <!-- ﻿kssma_action 配置 -->
+  <bean id="cgms_kssmaAction" class="com.moemao.tgks.cgms.kssma.action.KssmaAction">
+    <property name="cgms_kssmaService" ref="cgms_kssmaService" />
+  </bean>
 </beans>

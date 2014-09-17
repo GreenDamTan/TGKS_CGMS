@@ -68,5 +68,31 @@
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
     
+    <!-- cgms_kssma -->
+    <action name="kssmaManager" class="com.moemao.tgks.cgms.kssma.action.KssmaAction" method="kssmaManager">
+        <result name="success">/WEB-INF/jsp/cgms/kssma/kssmaManager.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="queryKssma" class="com.moemao.tgks.cgms.kssma.action.KssmaAction" method="queryKssma">
+        <result name="success">/WEB-INF/jsp/cgms/kssma/kssmaList.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editKssmaPage" class="com.moemao.tgks.cgms.kssma.action.KssmaAction" method="editKssmaPage">
+        <result name="success">/WEB-INF/jsp/cgms/kssma/kssmaEdit.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="editKssma" class="com.moemao.tgks.cgms.kssma.action.KssmaAction" method="editKssma">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+
+    <action name="deleteKssma" class="com.moemao.tgks.cgms.kssma.action.KssmaAction" method="deleteKssma">
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
   </package>
 </struts>

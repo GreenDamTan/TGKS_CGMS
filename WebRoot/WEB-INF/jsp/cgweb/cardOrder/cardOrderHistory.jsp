@@ -26,6 +26,18 @@
 		text-align: left;
 		color: black;
     }
+
+	.button_orange:link, .button_orange:active {
+	    background-color: #C5DEFF;
+	    display: inline-block;
+		padding: 3px 8px;
+		margin-right: 10px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 10px;
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,.5);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5);
+		text-shadow: 0 -1px 1px rgba(0,0,0,.25);
+	}
 	</style>	
 </head>
 <body>
@@ -80,10 +92,10 @@
                     <td><s:date name="#evt.createTime" format="yyyy-MM-dd HH:mm:ss"/></td>
                     <td>
                         <s:if test="#evt.type == 1">
-                            <a href="../cgweb/loveLiveCart.action?id=<s:property value='#evt.id'/>">详细信息</a>
+                            <a class="button_orange" href="../cgweb/loveLiveCart.action?id=<s:property value='#evt.id'/>">详细信息</a>
                         </s:if>
                         <s:elseif test="#evt.type == 2">
-                            <a href="../cgweb/kssmaCart.action?id=<s:property value='#evt.id'/>">详细信息</a>
+                            <a class="button_orange" href="../cgweb/kssmaCart.action?id=<s:property value='#evt.id'/>">详细信息</a>
                         </s:elseif>
                     </td>
                 </tr>
@@ -125,10 +137,10 @@
                     <td><s:date name="#evt.createTime" format="yyyy-MM-dd HH:mm:ss"/></td>
                     <td>
                         <s:if test="#evt.type == 1">
-                            <a href="../cgweb/loveLiveCartHistory.action?id=<s:property value='#evt.id'/>">详细信息</a>
+                            <a class="button_orange" href="../cgweb/loveLiveCartHistory.action?id=<s:property value='#evt.id'/>">详细信息</a>
                         </s:if>
                         <s:elseif test="#evt.type == 2">
-                            <a href="../cgweb/kssmaCartHistory.action?id=<s:property value='#evt.id'/>">详细信息</a>
+                            <a class="button_orange" href="../cgweb/kssmaCartHistory.action?id=<s:property value='#evt.id'/>">详细信息</a>
                         </s:elseif>
                     </td>
                 </tr>

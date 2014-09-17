@@ -51,6 +51,8 @@ $(document).ready(function(){
                 alert("删除成功");
                 var table=$.ajax({url:"../cgweb/queryLoveLiveCart.action", data:$("#reqForm").formSerialize(), async:false});
                 $("#cardDivFrame").html(table.responseText);
+                
+                $("#result").html($("#cardSelect option").length);
             },
             error : function(){
                 alert("删除失败");

@@ -28,15 +28,20 @@
 </form>
 <div id="top_bg">
 	<div class="top">
+        <!-- 查询卡片form -->
+        <form id="reqForm" method="post">
+            <input type="hidden" name="cardOrderId" value="${cardOrderId }"/>
+        </form>
 		<!--导航开始-->
 		<div class="nav_z">
 			<ul id="navul" class="cl">
 				<%@ include file="/WEB-INF/jsp/cgweb/main/toolbar.jsp" %>
-				<!-- 查询卡片form -->
-				<form id="reqForm" method="post">
-				    <input type="hidden" name="cardOrderId" value="${cardOrderId }"/>
-				</form>
 				<!--可在此处直接添加导航-->
+				<li style="width:auto;">
+				    <div style="color: white;">
+				        已选中 <a id="result">0</a> 张卡牌，请 <a href="#" style="color:#C5DEFF;" onclick="window.open('http://www.moemao.com')"><b>点击此处</b></a>下单，备注填写：${cardOrderId }
+				    </div>
+				</li>
 			</ul>
 		</div><!--导航结束-->
 		<script  type="text/javascript"> 
@@ -61,6 +66,8 @@ $(document).ready(function(){
 	{
 		var table=$.ajax({url:"../cgweb/queryLoveLiveCart.action", data:$("#reqForm").formSerialize(), async:false});
 		$("#cardDivFrame").html(table.responseText);
+		
+		$("#result").html($("#cardSelect option").length);
 	}
 	
 	query();

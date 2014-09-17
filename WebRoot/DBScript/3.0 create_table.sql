@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `t_tgks_cgms_lovelive` (
   `rarity` varchar(30) default NULL COMMENT '稀有度（r sr ur）',
   `type` varchar(30) default NULL COMMENT '类型（smile pure cool all）',
   `imageurl` varchar(200) default NULL COMMENT '图片URL',
-  `imageturl` varchar(200) default NULL COMMENT '觉醒图片URL',
+  `imageturl` varchar(200) default NULL COMMENT '外网小图URL',
   `maxlevel` varchar(10) default NULL COMMENT '最大等级',
   `minhp` varchar(10) default NULL COMMENT '一级HP',
   `minsmile` varchar(10) default NULL COMMENT '一级Smile',
@@ -47,3 +47,23 @@ CREATE TABLE IF NOT EXISTS `t_tgks_cgms_cardorder` (
   `remark` varchar(500) default NULL COMMENT '备注',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='卡牌订单表';
+
+
+
+--
+-- 表的结构 `t_tgks_cgms_kssma`
+--
+DROP TABLE IF EXISTS `t_tgks_cgms_kssma`;
+CREATE TABLE IF NOT EXISTS `t_tgks_cgms_kssma` (
+  `id` varchar(30) NOT NULL COMMENT '表唯一主键',
+  `cardid` varchar(30) NOT NULL COMMENT '卡牌ID',
+  `name` varchar(100) default NULL COMMENT '名字',
+  `rarity` varchar(30) default NULL COMMENT '稀有度',
+  `type` varchar(30) default NULL COMMENT '类型（1 剑术之城；2 技巧之场；3 魔法之派；4 妖精）',
+  `imageurl` varchar(200) default NULL COMMENT '图片URL',
+  `imageturl` varchar(200) default NULL COMMENT '外网小图URL',
+  `createtime` timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+  `remark` varchar(500) default NULL COMMENT '备注',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cardid` (`cardid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='扩散性MA卡牌信息表';

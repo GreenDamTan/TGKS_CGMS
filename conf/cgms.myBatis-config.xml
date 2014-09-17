@@ -9,6 +9,10 @@
 		<typeAlias alias="LoveLiveEvt" type="com.moemao.tgks.cgms.lovelive.entity.LoveLiveEvt" />
 		<typeAlias alias="LoveLiveReq" type="com.moemao.tgks.cgms.lovelive.entity.LoveLiveReq" />
 		
+		<!-- cgms_﻿kssma -->
+		<typeAlias alias="KssmaEvt" type="com.moemao.tgks.cgms.kssma.entity.KssmaEvt" />
+		<typeAlias alias="KssmaReq" type="com.moemao.tgks.cgms.kssma.entity.KssmaReq" />
+		
 		<!-- cgms_﻿cardorder -->
 		<typeAlias alias="CardOrderEvt" type="com.moemao.tgks.cgms.cardorder.entity.CardOrderEvt" />
 		<typeAlias alias="CardOrderReq" type="com.moemao.tgks.cgms.cardorder.entity.CardOrderReq" />

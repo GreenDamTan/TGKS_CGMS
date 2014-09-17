@@ -74,8 +74,8 @@
 		</td>
 	</tr>
 	<tr><!-- imageUrl -->
-		<td align="center" rowspan="4" colspan="2" valign="middle">
-			<img align="middle" width="160px" id="loveLiveImageUrlPic" alt="未觉醒" src="${loveLiveEvt.imageUrl }" />
+		<td style="text-align:center;" rowspan="4" colspan="2">
+			<img align="middle" width="160px" id="loveLiveImageUrlPic" alt="本地图" src="${loveLiveEvt.imageUrl }" />
 		</td>
 		<td>Lv1 HP</td><td colspan="2"><input type="text" size="10" name="loveLiveEvt.minHP" id="loveLiveMinHP" value="${loveLiveEvt.minHP }" /></td>
 		<td>Lv1 Smile</td><td colspan="2"><input type="text" size="10" name="loveLiveEvt.minSmile" id="loveLiveMinSmile" value="${loveLiveEvt.minSmile }" /></td>
@@ -91,8 +91,8 @@
 	</tr>
 	<!-- 填补图片展示占用的行数 -->
 	<tr><!-- imageTUrl -->
-		<td align="center" rowspan="4" colspan="2" valign="middle">
-			<img align="middle" width="160px" id="loveLiveImageTUrlPic" alt="觉醒后" src="${loveLiveEvt.imageTUrl }" />
+		<td style="text-align:center;" rowspan="4" colspan="2">
+			<img align="middle" width="160px" id="loveLiveImageTUrlPic" alt="网络图" src="${loveLiveEvt.imageTUrl }" />
 		</td>
 		<td>LvMax HP</td><td colspan="2"><input type="text" size="10" name="loveLiveEvt.maxHP" id="loveLiveMaxHP" value="${loveLiveEvt.maxHP }" /></td>
 		<td>LvMax Smile</td><td colspan="2"><input type="text" size="10" name="loveLiveEvt.maxSmile" id="loveLiveMaxSmile" value="${loveLiveEvt.maxSmile }" /></td>
