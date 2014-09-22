@@ -1,4 +1,8 @@
-﻿TGKS_CGMS v0.6.1    2014.9.17
+﻿TGKS_CGMS v0.7.0    2014.9.22
+1、新增 KSSMA的CGWEB相关页面，包括选图，新增订单等功能
+2、修改 lovelive kssma相关代码，使其符合整体代码规范，修正4个相关的sql-tag
+
+TGKS_CGMS v0.6.1    2014.9.17
 1、新增 KSSMA的卡牌管理模块
 
 TGKS_CGMS v0.6.0    2014.9.12

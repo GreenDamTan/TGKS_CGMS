@@ -41,7 +41,7 @@ public class LoveLiveServiceImpl implements LoveLiveService
 	
 	public List<LoveLiveEvt> queryLoveLiveByCardId(List<String> list)
 	{
-	    return cgms_loveLiveDao.queryLoveLiveByCardId(list);
+	    return cgms_loveLiveDao.cgms_queryLoveLiveByCardId(list);
 	}
 	
 	public int addLoveLive(LoveLiveEvt loveLiveEvt)

@@ -17,4 +17,7 @@ public int updateKssma(KssmaEvt kssmaEvt);
 
 public int deleteKssma(List<String> ids);
 
+public List<KssmaEvt> queryKssmaByCardId(List<String> list);
+
+public List<String> queryKssmaPreName();
 }

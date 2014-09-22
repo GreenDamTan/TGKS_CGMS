@@ -42,6 +42,22 @@
         </if>
 </select>
 
+<select id="cgms_queryKssmaByCardId" parameterType="list" resultType="KssmaEvt" resultMap="KssmaEvtMap">
+        <![CDATA[  
+            SELECT t.id, t.cardid, t.name, t.rarity, t.type, t.imageurl, t.imageturl, t.createtime, t.remark FROM t_tgks_cgms_kssma t
+            WHERE t.cardid IN
+        ]]>
+        <foreach collection="list" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+</select>
+
+<select id="cgms_queryKssmaPreName" resultType="string">
+        <![CDATA[  
+			SELECT distinct LEFT(t.name, 3) name FROM `t_tgks_cgms_kssma` t where t.name like '%型%'
+        ]]>
+</select>
+
 <insert id="cgms_addKssma" parameterType="KssmaEvt">
         <![CDATA[  
             INSERT INTO t_tgks_cgms_kssma (id, cardid, name, rarity, type, imageurl, imageturl, createtime, remark) 

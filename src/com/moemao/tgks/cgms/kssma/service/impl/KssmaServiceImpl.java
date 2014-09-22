@@ -54,6 +54,18 @@ public int deleteKssma(List<String> ids)
 return cgms_kssmaDao.cgms_deleteKssma(ids);
 }
 
+@Override
+public List<KssmaEvt> queryKssmaByCardId(List<String> list)
+{
+    return this.cgms_kssmaDao.cgms_queryKssmaByCardId(list);
+}
+
+@Override
+public List<String> queryKssmaPreName()
+{
+    return this.cgms_kssmaDao.cgms_queryKssmaPreName();
+}
+
 /**
  * @return 返回 cgms_kssmaDao
  */

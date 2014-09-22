@@ -62,5 +62,35 @@
         <result name="success">/WEB-INF/jsp/cgweb/cardOrder/cardOrderHistory.jsp</result>
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
+    
+    <!-- Kssma 选卡页面 -->
+    <action name="kssmaCard" class="com.moemao.tgks.cgweb.card.action.KssmaCardAction" method="kssmaCard">
+        <result name="success">/WEB-INF/jsp/cgweb/kssma/kssmaCard.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <!-- Kssma 卡片select -->
+    <action name="queryKssmaCard" class="com.moemao.tgks.cgweb.card.action.KssmaCardAction" method="queryKssmaCard">
+        <result name="success">/WEB-INF/jsp/cgweb/kssma/kssmaCardList.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
+    
+    <!-- Kssma 购物车页面 -->
+    <action name="kssmaCart" class="com.moemao.tgks.cgweb.card.action.KssmaCardAction" method="kssmaCart">
+        <result name="success">/WEB-INF/jsp/cgweb/kssma/kssmaCart.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- Kssma 购物车历史页面 -->
+    <action name="kssmaCartHistory" class="com.moemao.tgks.cgweb.card.action.KssmaCardAction" method="kssmaCartHistory">
+        <result name="success">/WEB-INF/jsp/cgweb/kssma/kssmaCartHistory.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- Kssma 购物车页面卡片select -->
+    <action name="queryKssmaCart" class="com.moemao.tgks.cgweb.card.action.KssmaCardAction" method="queryKssmaCart">
+        <result name="success">/WEB-INF/jsp/cgweb/kssma/kssmaCardList.jsp</result>
+        <result name="error">/cgweb/index.jsp</result>
+    </action>
   </package>
 </struts>

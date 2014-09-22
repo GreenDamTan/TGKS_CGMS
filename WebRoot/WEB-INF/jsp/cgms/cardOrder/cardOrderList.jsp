@@ -13,6 +13,7 @@
 				<th>状态</th>
 				<th>创建时间</th>
 				<th>备注</th>
+				<th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,14 @@
 					</td>
 					<td><s:date name="#evt.createTime" format="yyyy-MM-dd HH:mm:ss"/></td>
 					<td><s:property value='#evt.remark'/></td>
+					<td>
+					   <s:if test="#evt.type == 1">
+                            <input type="button" onclick="window.open('../cgweb/loveLiveCart.action?id=<s:property value='#evt.id'/>')" value="详情" />
+                        </s:if>
+                        <s:elseif test="#evt.type == 2">
+                            <input type="button" onclick="window.open('../cgweb/kssmaCart.action?id=<s:property value='#evt.id'/>')" value="详情" />
+                        </s:elseif>
+					</td>
 				</tr>
 			</s:iterator>
 		</tbody>

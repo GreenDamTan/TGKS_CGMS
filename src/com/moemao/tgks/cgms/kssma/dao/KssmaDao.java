@@ -18,4 +18,8 @@ public interface KssmaDao extends TGKSDao
     public int cgms_updateKssma(KssmaEvt kssmaEvt) throws DataAccessException;
     
     public int cgms_deleteKssma(List<String> list) throws DataAccessException;
+    
+    public List<KssmaEvt> cgms_queryKssmaByCardId(List<String> list) throws DataAccessException;
+    
+    public List<String> cgms_queryKssmaPreName() throws DataAccessException;
 }
