@@ -118,8 +118,13 @@ public class KssmaCardAction extends TGKSAction
      * @throws
      */
     public String queryKssmaCart()
-    {
+    {        
         CardOrderEvt cardOrder = cgms_cardOrderService.queryCardOrderById(cardOrderId);
+
+        if (CommonUtil.isEmpty(cardOrder))
+        {
+            return SUCCESS;
+        }
         
         list = cgms_kssmaService.queryKssmaByCardId(CommonUtil.stringToList(cardOrder.getCardId()));
         return SUCCESS;

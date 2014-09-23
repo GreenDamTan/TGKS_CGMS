@@ -18,7 +18,7 @@
         </thead>
         <tbody>
 			<s:iterator  value="list" var="evt">
-				<tr>
+				<tr <s:if test="#evt.status == 1">bgcolor="#ddd"</s:if>>
 					<td width="20"><input type="checkbox" name="cardOrderId" value="<s:property value='#evt.id'/>" /></td>
 					<td><b id="<s:property value='#evt.id'/>" class="cardOrderUpdate"><s:property value="#evt.id"/></b></td>
 					<td><s:property value='#evt.username'/></td>
@@ -43,11 +43,14 @@
 					<td><s:property value='#evt.remark'/></td>
 					<td>
 					   <s:if test="#evt.type == 1">
-                            <input type="button" onclick="window.open('../cgweb/loveLiveCart.action?id=<s:property value='#evt.id'/>')" value="详情" />
+                            <input type="button" onclick="window.open('../cgweb/loveLiveCartHistory.action?id=<s:property value='#evt.id'/>')" value="详情" />
                         </s:if>
                         <s:elseif test="#evt.type == 2">
-                            <input type="button" onclick="window.open('../cgweb/kssmaCart.action?id=<s:property value='#evt.id'/>')" value="详情" />
+                            <input type="button" onclick="window.open('../cgweb/kssmaCartHistory.action?id=<s:property value='#evt.id'/>')" value="详情" />
                         </s:elseif>
+                        <!-- 
+                        <input type="button" onclick="window.open('../cgms/downloadCardZip.action?id=<s:property value='#evt.id'/>')" value="下载" />
+                         -->
 					</td>
 				</tr>
 			</s:iterator>

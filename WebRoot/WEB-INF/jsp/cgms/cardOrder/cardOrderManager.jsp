@@ -45,6 +45,7 @@
 <button id="addCardOrder">新增</button>
 <button id="deleteCardOrder">删除</button>
 <button id="finishCardOrder">完成</button>
+<button id="downloadCardZip">图包</button>
 <!-- 
 <button id="offCardOrder">禁用</button>
  -->
@@ -52,6 +53,27 @@
 
 <div id="cardOrderEdit" title="CardOrder Edit">
 	<form id="cardOrderForm" action="../cgms/editCardOrder.action" method="post"></form>
+</div>
+
+<div id="downloadCardZipEdit" title="图包下载">
+    <form id="downloadCardZipForm" action="../cgms/downloadCardZipByIds.action" method="post">
+        <table>
+            <tr>
+                <td>卡牌类型：</td>
+                <td>
+                    <select name="cardType" >
+                        <option value="1">LoveLive</option>
+                        <option value="2">扩散性MA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea cols="45" rows="7" name="cardIds" id="cardIds"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 
 <div id="cardOrderConfirm" title="操作确认" hidden="hidden">
@@ -258,56 +280,70 @@ $(document).ready(function(){
 			return false;
 	});
 	 
-	 // 停用按钮
-	$( "#offCardOrder" ).button({
-		icons: {
-			primary: "ui-icon-close"
-			}
-		}).click(function() {
-			$("#cardOrderManagerSubmit").val("1");
-			// 获取选中的记录ids
-			var ids = "";
-			var array = document.getElementsByName("cardOrderId");
-			for (var i=0; i<array.length; i++)
-		   	{
-		   		if (array[i].checked)
-	  			{
-		   			if (ids == "")
-	   				{
-		   				ids += array[i].value;
-	   				}
-		   			else
-		   			{
-		   				ids += "," + array[i].value;
-		   			}
-	  			}
-		   	}
-			
-			// 操作验证
-			if (ids == "")
-			{
-				alert("请选择至少一条记录");
-				$("#cardOrderManagerSubmit").val("0");
-				return false;
-			}
-			
-			// ajax调用删除action
-			var options = { 
-				url:"../cgms/changeStatusCardOrder.action?status=0&ids=" + ids , // 提交给哪个执行
-				type:'POST', 
-				success: function(){
-					// 执行成功刷新form
-					query();
-				},
-				error:function(){ 
-					alert("操作失败"); 
-				}
-			};
-			
-			$("#cardOrderConfirm").ajaxSubmit(options);
-			$("#cardOrderManagerSubmit").val("0");
-			return false;
-	});
+	 // 下载图包框
+	 $( "#downloadCardZipEdit" ).dialog({
+        modal: true,
+        height:300,
+        width:350,
+        autoOpen: false,
+        show: "fold",
+        hide: "fold",
+        buttons:
+        { 
+            "确定":function()
+            {
+                // 页面校验
+                if (!cardOrderFormCheck())
+                {
+                    return false;
+                }
+                var form = $("#downloadCardZipForm");
+                form.submit();
+            }, 
+            "关闭": function()
+            {
+                $("#cardOrderManagerSubmit").val("0");
+                $("#downloadCardZipEdit").dialog("close"); 
+            } 
+        }
+    });
+    
+    // 提交下载图包表单
+    $("#downloadCardZipForm").submit(function()
+    {
+        if ($("#cardOrderManagerSubmit").val() == "0")
+        {
+            return false;
+        }
+        
+        $("#cardOrderManagerSubmit").val("0");
+        
+        var options = { 
+            url:"../cgms/downloadCardZipByIds.action", // 提交给哪个执行
+            type:'POST', 
+            success: function(){
+                $("#downloadCardZipEdit").dialog("close");
+                $("#cardIds").val("");
+            },
+            error:function(){ 
+                $("#downloadCardZipEdit").dialog("close"); 
+            }
+        };
+        
+        $("#downloadCardZipForm").ajaxSubmit(options);
+    });
+    
+    // 下载图包按钮
+    $( "#downloadCardZip" ).button({
+        icons: {
+            primary: "ui-icon-disk"
+            }
+        }).click(function() {
+        // 请求提交标志
+        $("#cardOrderManagerSubmit").val("1");
+        $( "#downloadCardZipEdit" ).dialog( "open" );
+        return false;
+    });
 	
 	 // 刷新按钮
 	$( "#queryCardOrder" ).button().click(function() {

@@ -117,6 +117,11 @@ public class LoveLiveCardAction extends TGKSAction
     {
         CardOrderEvt cardOrder = cgms_cardOrderService.queryCardOrderById(cardOrderId);
         
+        if (CommonUtil.isEmpty(cardOrder))
+        {
+            return SUCCESS;
+        }
+        
         list = cgms_loveLiveService.queryLoveLiveByCardId(CommonUtil.stringToList(cardOrder.getCardId()));
         return SUCCESS;
     }

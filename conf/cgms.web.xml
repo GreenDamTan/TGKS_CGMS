@@ -11,6 +11,18 @@
         <result name="error">/WEB-INF/jsp/common/error.jsp</result>
     </action>
     
+    <!-- download action -->
+    <action name="downloadCardZip" class="com.moemao.tgks.cgms.download.action.DownloadAction" method="downloadCardZip">  
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
+    <!-- download action -->
+    <action name="downloadCardZipByIds" class="com.moemao.tgks.cgms.download.action.DownloadAction" method="downloadCardZipByIds">  
+        <result name="success">/WEB-INF/jsp/common/success.jsp</result>
+        <result name="error">/WEB-INF/jsp/common/error.jsp</result>
+    </action>
+    
     <!-- cgms_loveLive -->
     <action name="loveLiveManager" class="com.moemao.tgks.cgms.lovelive.action.LoveLiveAction" method="loveLiveManager">
         <result name="success">/WEB-INF/jsp/cgms/loveLive/loveLiveManager.jsp</result>

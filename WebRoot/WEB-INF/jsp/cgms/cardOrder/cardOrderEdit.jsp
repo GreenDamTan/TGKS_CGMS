@@ -30,12 +30,18 @@
 	</tr>
 	<tr>
 		<td>卡片ID</td>
-		<td colspan="3">${cardOrderEvt.cardId }</td>
+		<td colspan="3"><a id="card_ids" onclick="copyToRemark();">${cardOrderEvt.cardId }</a></td>
 	</tr>
 	<tr>
 		<td>备注</td>
-		<td colspan="3">${cardOrderEvt.remark }</td>
+		<td colspan="3"><textarea id="cardOrderRemark" cols="90" rows="5">${cardOrderEvt.remark }</textarea></td>
 	</tr>
 </table>
 <script type="text/javascript">
+function copyToRemark()
+{  
+    var ids = document.getElementById("card_ids").innerHTML;
+    
+    document.getElementById("cardOrderRemark").value = ids;
+}
 </script>
